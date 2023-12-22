@@ -6,6 +6,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
 import android.view.View.OnFocusChangeListener
+import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Button
@@ -14,6 +15,7 @@ import android.widget.Spinner
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.AppCompatButton
 import androidx.core.view.isVisible
 import java.util.regex.Pattern
 
@@ -28,7 +30,7 @@ class SignUpActivity : AppCompatActivity(){
         val pwCheck = findViewById<EditText>(R.id.editTextTextPassword3)
         val emailSpinner = findViewById<Spinner>(R.id.spin_email) as Spinner
         val name = findViewById<EditText>(R.id.et_name)
-        val btn_join2 = findViewById<Button>(R.id.btn_join2)
+        val btn_join2 = findViewById<AppCompatButton>(R.id.btn_join2)
         val emailBack = findViewById<EditText>(R.id.et_emailSelf)
         val emailArray = resources.getStringArray(R.array.email_array)
         val arrayAdapter = ArrayAdapter.createFromResource(this,R.array.email_array,android.R.layout.simple_spinner_item)
@@ -59,9 +61,11 @@ class SignUpActivity : AppCompatActivity(){
                 if(emailArray[position]=="직접입력"){
                     idBack.setText("")
                     emailBack.isVisible=true
+                    emailSpinner.layoutParams.width= 120
                 }else{
                     emailBack.isVisible=false
                     idBack.setText(emailArray[position])
+                    emailSpinner.layoutParams.width = ViewGroup.LayoutParams.WRAP_CONTENT
                 }
             }
 

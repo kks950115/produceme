@@ -8,6 +8,7 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.widget.AppCompatButton
 import kotlinx.coroutines.NonCancellable
 
 class SignInActivity : AppCompatActivity() {
@@ -18,8 +19,8 @@ class SignInActivity : AppCompatActivity() {
 
         val id = findViewById<EditText>(R.id.et_id)
         val pw = findViewById<EditText>(R.id.editTextTextPassword)
-        val btn_login = findViewById<Button>(R.id.btn_login)
-        val btn_join = findViewById<Button>(R.id.btn_join)
+        val btn_login = findViewById<AppCompatButton>(R.id.btn_login)
+        val btn_join = findViewById<AppCompatButton>(R.id.btn_join)
 
         resultLauncher =registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
             if(it.resultCode == RESULT_OK){
