@@ -5,6 +5,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
 import kotlin.random.Random
 
 class HomeActivity : AppCompatActivity() {
@@ -14,7 +15,7 @@ class HomeActivity : AppCompatActivity() {
 
         val iv_user = findViewById<ImageView>(R.id.imageView2)
         val tv_id = findViewById<TextView>(R.id.tv_inputId)
-        val btn_close = findViewById<Button>(R.id.btn_close)
+        val btn_close = findViewById<ConstraintLayout>(R.id.btn_close)
 
         tv_id.text = intent.getStringExtra("id")
         val random = Random
